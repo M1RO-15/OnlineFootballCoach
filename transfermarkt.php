@@ -99,7 +99,7 @@ if ($result->num_rows > 0) {
             <tr>
                 <th scope="row"><?php echo($position); ?></th>
                 <td><?php echo($vorname); ?></td>
-                <td><?php echo($nachname); ?></td>
+                <td><?php echo("<a href=\"spieler-profil.php?spieler=$sp_id\">" . $nachname . "</a>"); ?></td>
                 <td><?php echo($staerke_verfae); ?></td>
                 <td><?php echo($price); ?></td>
             </tr>
