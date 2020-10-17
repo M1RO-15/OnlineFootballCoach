@@ -10,14 +10,26 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ixLrybtXtGtuSKX5cQe57pGUWd" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="SQL" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -36,6 +48,8 @@
       <updated>1602844499174</updated>
       <workItem from="1602844502413" duration="21000" />
       <workItem from="1602844564821" duration="5939000" />
+      <workItem from="1602951087121" duration="1646000" />
+      <workItem from="1602969805723" duration="2531000" />
     </task>
     <servers />
   </component>
@@ -43,13 +57,18 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="667" y="162" key="#PHP" timestamp="1602951150641">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="667" y="162" key="#PHP/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602951150641" />
     <state x="727" y="242" key="NewPhpClassDialog" timestamp="1602845225678">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="727" y="242" key="NewPhpClassDialog/0.0.1920.1040/1920.479.800.600@0.0.1920.1040" timestamp="1602845225678" />
-    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1602851314997">
+    <state x="794" y="443" key="NewPhpFileDialog" timestamp="1602951225153">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="443" key="NewPhpFileDialog/0.0.1920.1040/1920.479.800.600@0.0.1920.1040" timestamp="1602851314997" />
+    <state x="794" y="443" key="NewPhpFileDialog/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1602951225153" />
   </component>
 </project>

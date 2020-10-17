@@ -55,6 +55,7 @@ if ($result->num_rows > 0) {
             <th scope="col">Preis</th>
         </tr>
         </thead>
+    <tbody>
 <?php
 
     while($row = $result->fetch_assoc()) {
@@ -95,7 +96,7 @@ if ($result->num_rows > 0) {
 
 
         ?>
-            <tbody>
+
             <tr>
                 <th scope="row"><?php echo($position); ?></th>
                 <td><?php echo($vorname); ?></td>

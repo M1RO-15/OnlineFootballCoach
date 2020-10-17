@@ -1,0 +1,42 @@
+create table if not exists accounts(
+acc_id int NOT NULL AUTO_INCREMENT,
+user_name varchar(255),
+email varchar(255),
+password varchar(255),
+primary key (acc_id)
+);
+
+create table if not exists teams (
+t_id int NOT NULL AUTO_INCREMENT,
+acc_id int,
+team_name varchar(255),
+color1 varchar(7),
+color2 varchar (7),
+stadium_name varchar(255),
+city varchar(255),
+primary key(t_id),
+foreign key (acc_id) references accounts (acc_id)
+);
+
+/* 2Do: Player Attributes */
+create table if not exists players (
+pl_id int NOT NULL AUTO_INCREMENT,
+t_id int,
+first_name varchar (255),
+last_name varchar (255),
+position varchar (3),
+birthday date,
+strength int,
+primary key(pl_id),
+foreign key (t_id) references teams (t_id)
+);
+
+/* 2Do: Transfer-date */
+create table if not exists former_teams (#
+ft_id int NOT NULL AUTO_INCREMENT,
+pl_id int,
+t_id int,
+primary key (ft_id),
+foreign key(pl_id) references players(pl_id),
+foreign key (t_id) references teams(t_id)
+);
