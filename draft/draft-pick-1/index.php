@@ -29,9 +29,33 @@
         $db_username = "U4318898";
         $password = "M1i5r2o1;Data";
         $dbname = "DB4318898";
-        $choosen_picks = 0;
 
-        // Create connection
+        $choosen_picks = 0;
+        $t_id_user = 1;
+
+
+        /* Abfrage Anzahl der Picks */
+        $conn = new mysqli($servername, $db_username, $password, $dbname);
+
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        $sql = "SELECT pl_id FROM players WHERE t_id = '$t_id_user'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+
+            while($row = $result->fetch_assoc()) {
+                $choosen_picks++;
+            }
+        } else {
+            echo "0 results";
+        }
+        $conn->close();
+
+
+        // Query of playerDB
         $conn = new mysqli($servername, $db_username, $password, $dbname);
         $conn->set_charset("utf8");
         // Check connection
@@ -39,7 +63,7 @@
         die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "SELECT vorname, nachname, position, staerke FROM spieler";
+        $sql = "SELECT first_name, last_name, position, strength, t_id FROM players";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -51,6 +75,7 @@
                 <th scope="col">Vorname</th>
                 <th scope="col">Nachname</th>
                 <th scope="col">Position</th>
+                <th scope="col">Team</th>
                 <th scope="col">Stärke</th>
                 <th scope="col">Draft</th>
             </tr>
@@ -58,20 +83,43 @@
             <tbody>
         <?php
 
+
         // output data of each row
         while($row = $result->fetch_assoc()) {
-        $vorname = $row['vorname'];
-        $nachname = $row['nachname'];
+        $first_name = $row['first_name'];
+        $last_name = $row['last_name'];
         $position = $row['position'];
-        $staerke = $row['staerke'];
+        $strength = $row['strength'];
+        $player_team = $row['t_id'];
+        $player_team_txt = "Vereinslos";
+
+            //Query of Teamname from the player
+            $conn2 = new mysqli($servername, $db_username, $password, $dbname);
+
+            if ($conn2->connect_error) {
+                die("Connection failed: " . $conn2->connect_error);
+            }
+
+            $sql2 = "SELECT team_name FROM teams WHERE t_id = '$player_team'";
+            $result2 = $conn2->query($sql2);
+
+            if ($result2->num_rows > 0) {
+
+
+                while($row = $result2->fetch_assoc()) {
+                    $player_team_txt = $row['team_name'];
+                }
+            } else {  }
+            $conn2->close();
 
         ?>
             <tr>
-                <th scope="row"><?php echo($vorname); ?></th>
-                <td><?php echo($nachname); ?></td>
+                <td><?php echo($first_name); ?></td>
+                <td><?php echo($last_name); ?></td>
                 <td><?php echo($position); ?></td>
-                <td><?php echo($staerke); ?></td>
-                <td><?php echo("Pick"); ?></td>
+                <td><?php echo($player_team_txt); ?></td>
+                <td><?php echo($strength); ?></td>
+                <td <?php if($player_team == NULL) { echo("style=\"color: #00FF00\""); } else { echo("style=\"color: #FF0000\""); } ?>><?php echo("Pick"); ?></td>
             </tr>
         <?php
 
